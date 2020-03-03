@@ -1,5 +1,7 @@
 img {
     width: 250px;
+    z-index: 0;
+    vertical-align: auto;
 }
 header {
     background-color: salmon;
@@ -11,4 +13,17 @@ header {
 ul {
     display: inline-block;
     width: 300px;
+    margin-left: 50px;
+}
+li {
+    list-style-type: circle;
+}
+h1, h2 {
+    text-align: center;
+}
+h1 {
+    z-index: 1;
+    font-size: 40px;
+    position: relative;
+    top: 90px;
 }

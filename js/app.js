@@ -33,7 +33,7 @@ var storeOne = {
     customersPerHour: [],
     cookiesPerHour: [],
     setCookiesPerHour: function() {
-            for (var i = 0; i < 14; i++) {
+            for (var i = 0; i < hoursOpen.length; i++) {
                 this.cookiesPerHour[i] = Math.ceil(this.customersPerHour[i] * this.avgCookies);
                 this.TotalSold = this.TotalSold + this.cookiesPerHour[i];
             }
@@ -62,7 +62,7 @@ for (var i = 0; i < storeOne.customersPerHour.length; i++ ){
     //Create li
     var customers = document.createElement('li');
     // fill in lists
-    customers.textContent = hoursOpen[i] + "  " + storeOne.customersPerHour[i] + " customers " + storeOne.cookiesPerHour[i] + " cookies";
+    customers.textContent = hoursOpen[i] + "  " +  storeOne.cookiesPerHour[i] + " cookies";
     position1.appendChild(customers);
   }
   
@@ -83,7 +83,7 @@ var storeTwo = {
     customersPerHour: [],
     cookiesPerHour: [],
     setCookiesPerHour: function() {
-            for (var i = 0; i < 14; i++) {
+            for (var i = 0; i < hoursOpen.length; i++) {
                 this.cookiesPerHour[i] = Math.ceil(this.customersPerHour[i] * this.avgCookies);
                 this.TotalSold = this.TotalSold + this.cookiesPerHour[i];
             }
@@ -112,7 +112,7 @@ for (var i = 0; i < storeTwo.customersPerHour.length; i++ ){
     //Create li
     var customers = document.createElement('li');
     // fill in lists
-    customers.textContent = hoursOpen[i] + "  " + storeTwo.customersPerHour[i] + " customers " + storeTwo.cookiesPerHour[i] + " cookies";
+    customers.textContent = hoursOpen[i] + "  "  + storeTwo.cookiesPerHour[i] + " cookies";
     position2.appendChild(customers);
   }
   
@@ -130,7 +130,7 @@ var storeThree = {
     customersPerHour: [],
     cookiesPerHour: [],
     setCookiesPerHour: function() {
-            for (var i = 0; i < 14; i++) {
+            for (var i = 0; i < hoursOpen.length; i++) {
                 this.cookiesPerHour[i] = Math.ceil(this.customersPerHour[i] * this.avgCookies);
                 this.TotalSold = this.TotalSold + this.cookiesPerHour[i];
             }
@@ -159,7 +159,7 @@ for (var i = 0; i < storeThree.customersPerHour.length; i++ ){
     //Create li
     var customers = document.createElement('li');
     // fill in lists
-    customers.textContent = hoursOpen[i] + "  " + storeThree.customersPerHour[i] + " customers " + storeThree.cookiesPerHour[i] + " cookies";
+    customers.textContent = hoursOpen[i] + "  "  + storeThree.cookiesPerHour[i] + " cookies";
     position3.appendChild(customers);
   }
   
@@ -178,7 +178,7 @@ var storeFour = {
     customersPerHour: [],
     cookiesPerHour: [],
     setCookiesPerHour: function() {
-            for (var i = 0; i < 14; i++) {
+            for (var i = 0; i < hoursOpen.length; i++) {
                 this.cookiesPerHour[i] = Math.ceil(this.customersPerHour[i] * this.avgCookies);
                 this.TotalSold = this.TotalSold + this.cookiesPerHour[i];
                 // return CookieArray;
@@ -208,7 +208,7 @@ for (var i = 0; i < storeFour.customersPerHour.length; i++ ){
     //Create li
     var customers = document.createElement('li');
     // fill in lists
-    customers.textContent = hoursOpen[i] + "  " + storeFour.customersPerHour[i] + " customers " + storeFour.cookiesPerHour[i] + " cookies";
+    customers.textContent = hoursOpen[i] + "  "  + storeFour.cookiesPerHour[i] + " cookies";
     position4.appendChild(customers);
   }
   
@@ -226,7 +226,7 @@ var storeFive = {
     customersPerHour: [],
     cookiesPerHour: [],
     setCookiesPerHour: function() {
-            for (var i = 0; i < 14; i++) {
+            for (var i = 0; i < hoursOpen.length; i++) {
                 this.cookiesPerHour[i] = Math.ceil(this.customersPerHour[i] * this.avgCookies);
                 this.TotalSold = this.TotalSold + this.cookiesPerHour[i];
             }
@@ -255,7 +255,7 @@ for (var i = 0; i < storeFive.customersPerHour.length; i++ ){
     //Create li
     var customers = document.createElement('li');
     // fill in lists
-    customers.textContent = hoursOpen[i] + "  " + storeFive.customersPerHour[i] + " customers " + storeFive.cookiesPerHour[i] + " cookies";
+    customers.textContent = hoursOpen[i] + "  " +  storeFive.cookiesPerHour[i] + " cookies";
     position5.appendChild(customers);
   }
   
