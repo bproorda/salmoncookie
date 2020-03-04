@@ -1,10 +1,9 @@
 * {
     box-sizing: border-box;
 }
-
 img {
     width: 150px;
-    margin-right: 100px;
+    margin-right: 80px;
 }
 header {
     background-color: #ffab4b;
@@ -12,20 +11,33 @@ header {
     width: 100%;
     border-bottom:2px solid black;
 }
+header p {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #ff4bf6;
+}
 #pageTitle {
-    position: relative;
-    top: -40px;
+    display: inline-block;
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
     font-family: 'Pacifico', cursive;
+    cursor: url('images/salmoncursor.png'), auto;
  }
+
 nav {
-    display: inline-block
-   
+    display: inline-block;
+    position: fixed;
 }
 ul {
     margin-top: 20px;
     
 }
-li {
+nav li {
     margin-bottom: 40px;
     background-color: #ff4bf6;
     border: 2px solid black;
@@ -36,45 +48,44 @@ li {
     box-shadow: 10px 10px 10px;
     padding: 5px;
 }
+li:last-child {
+    margin-bottom: 0;
+}
 main {
     min-height: 1000px;
     background-image: radial-gradient(#544bff, #ff4bf6, #544bff);
-    z-index: 0;
 }
 #pageTitle {
-   position: relative;
-   top: -40px;
+   
    font-family: 'Pacifico', cursive;
 }
 a {
-    padding: 20px;
+    padding: 5px;
     color: black;
     text-decoration: none;
 }
-li:hover, a:hover {
+nav li:hover, a:hover, button:hover {
     background-color: cornsilk;
-    z-index: 3;
     color: #544bff;
     overflow: hidden;
 }
-
-
 h1, h2 {
     text-align: center;
 }
 h1 {
     font-size: 40px;
 }
-th, td {
-    border: 1px solid black;
-    padding: 3px;
-    max-width: 50px;
-    min-width: 15px;
-  }
-
-  caption {
-      font-size: 20px;
-      font-weight: bold;
-      display: block;
-  }
- 
+#wallpaper {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+   
+    left: 0;
+    right: 0;
+}
+header, #content, #locations {
+    z-index: 2;
+}
+button {
+    background-color: #ff4bf6;
+}

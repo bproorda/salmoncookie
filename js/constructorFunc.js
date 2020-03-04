@@ -179,3 +179,10 @@ for (var w = 0; w < hoursOpen.length; w++) {
 }
 position.appendChild(tRow);
 }
+
+
+//go dark function
+function goDark() {
+    var body = document.getElementsByClassName('body');
+    body.setAttribute
+}
