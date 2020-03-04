@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Caveat|Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,24 +17,31 @@
         <img src="images/salmoncookie.png" alt="salmon backed into a cookie" width="100">
     </header>
     <main>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="locations.html">Locations</a></li>
+                <li><a href="Recipies.html">Recipies</a></li>
+            </ul>
+        </nav>
         <h2>Sales Data</h2>
-        <section id="salesData">
-            <ul id="store1"></ul>
-            <br> <br>
-            <ul id="store2"></ul>
-            <br> <br>
-            <ul id="store3"></ul>
-            <br> <br>
-            <ul id="store4"></ul>
-            <br> <br>
-            <ul id="store5"></ul>
-
-            </section>
+        <table>
+            <caption>Sale of Cookies</caption>
+            <tbody id="salesData">
+            </tbody>
+        </table>
+        <br><br>
+        <table>
+            <caption>Cookie Tosser needed per hour</caption>
+            <tbody id="employeeData">
+            </tbody>
+        </table>
 
     </main>
 
 
-    <script src="js/app.js" async defer></script>
+    <script src="js/constructorFunc.js" async defer></script>
 </body>
 
 </html>
