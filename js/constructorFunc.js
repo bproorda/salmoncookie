@@ -79,7 +79,7 @@ var tableHead = document.createElement('thead');
 
 //creating blank first th
 var firstTh = document.createElement('th');
-firstTh.textContent = "    ";
+firstTh.textContent = "   ";
 tableHead.appendChild(firstTh);
 
 //creating th's
@@ -103,7 +103,7 @@ var locTD = document.createElement('td');
 locTD.textContent = this.location;
 tableRow.appendChild(locTD);
 
-//adding cookies solder per hour
+//adding cookies store per hour
 for (var k = 0; k < this.cookiesPerHour.length; k++){
     var td = document.createElement('td');
     td.textContent = this.cookiesPerHour[k];
@@ -123,7 +123,7 @@ var tableFoot = document.createElement('tr');
 
 //adding first item
 var totalFoot = document.createElement('td');
-totalFoot.textContent = 'total'
+totalFoot.textContent = 'Total'
 tableFoot.appendChild(totalFoot);
 
 
@@ -138,6 +138,44 @@ var td = document.createElement('td');
 td.textContent = hourTotal;
 tableFoot.appendChild(td);
 }
-
 //appending table footer to table
 position.appendChild(tableFoot);
+
+//creating table for employees
+//creating table header
+var position = document.getElementById('employeeData');
+var tableHead = document.createElement('thead');
+
+//creating blank first th
+var firstTh = document.createElement('th');
+firstTh.textContent = "";
+tableHead.appendChild(firstTh);
+
+//creating th's
+for (var j = 0; j < hoursOpen.length; j++) {
+    var th = document.createElement('th');
+    th.textContent = hoursOpen[j];
+    tableHead.appendChild(th);
+}
+//append table header to tbody
+position.appendChild(tableHead);
+
+//trying to create second table
+
+for (var count = 0; count < stores.length; count ++) {
+var tRow = document.createElement('tr');
+var tRowFirst = document.createElement('td');
+tRowFirst.textContent = stores[count].location;
+tRow.appendChild(tRowFirst);
+
+for (var w = 0; w < hoursOpen.length; w++) {
+    var tdEmployee = document.createElement('td');
+    var employeeNumber = Math.ceil(stores[count].cookiesPerHour[w] / 20);
+    while (employeeNumber < 2) {
+        employeeNumber++;
+    }
+    tdEmployee.textContent = employeeNumber;
+    tRow.appendChild(tdEmployee);
+}
+position.appendChild(tRow);
+}

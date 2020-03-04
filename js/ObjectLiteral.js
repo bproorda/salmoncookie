@@ -71,9 +71,6 @@ for (var i = 0; i < storeOne.customersPerHour.length; i++ ){
   storeTotal.textContent = 'store total sold: ' + storeOne.TotalSold;
   position1.appendChild(storeTotal);
   
-
-
-
 //Store Two
 var storeTwo = {
     location: 'Tokyo',
