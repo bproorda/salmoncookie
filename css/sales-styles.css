@@ -1,0 +1,31 @@
+
+* {
+    box-sizing: border-box;
+}
+#companyInfo {
+    display: inline-block;
+    margin-left: 30px;
+    width: 70%;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 3px;
+    max-width: 50px;
+    min-width: 15px;
+  }
+  table {
+    display: inline-block;
+    text-align: center;
+  }
+  caption {
+      font-size: 20px;
+      font-weight: bold;
+      display: block;
+  }
+}
+#salesData, #employeeData {
+    display: inline-block;
+    background-color: seashell;
+    width: 70%;
+}

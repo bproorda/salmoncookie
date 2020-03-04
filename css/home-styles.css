@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+div {
+    display: inline-block;
+    width: 70%;
+    margin-left: 30px;
+
+   
+}
+div h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px;
+}
+div p {
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+}
