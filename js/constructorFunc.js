@@ -76,8 +76,10 @@ var storeFive = new Store('Lima', 2, 16, 4.6 );
 
 //creating table
 //creating table header
+
 var position = document.getElementById('salesData');
 var tableHead = document.createElement('thead');
+
 
 //creating blank first th
 var firstTh = document.createElement('th');
@@ -96,6 +98,8 @@ position.appendChild(tableHead);
 
 //Rendering Function to create table rows
 Store.prototype.render = function() {
+    var position = document.getElementById('salesData');
+var tableHead = document.createElement('thead');
 
 //creating tableRow
 var tableRow = document.createElement('tr');
@@ -113,6 +117,9 @@ for (var k = 0; k < this.cookiesPerHour.length; k++){
 }
 position.appendChild(tableRow);
 
+
+
+
 }
 
 var stores = [storeOne, storeTwo, storeThree, storeFour, storeFive];
@@ -124,30 +131,43 @@ for (var z = 0; z < Store.allStores.length; z++) {
 }
 makeTable();
 
-//creating table footer
-var tableFoot = document.createElement('tr');
+var tableFooter;
+function makeTableFooter() {
+var positionLoc = document.getElementById('salesData');
+tableFooter = document.createElement('tfoot');
+tableFooter.setAttribute('id', 'tfooty');
+console.log('this is running');
 
+//creating footer row
+var tableFoot = document.createElement('tr');
+tableFooter.appendChild(tableFoot);
 //adding first item
 var totalFoot = document.createElement('td');
 totalFoot.textContent = 'Total'
 tableFoot.appendChild(totalFoot);
 
-
 //adding hourly totals
 var hourTotal = 0;
 for (var i = 0; i < hoursOpen.length; i++) {
     hourTotal = 0;
-for (var z = 0; z < stores.length; z++) {
-    hourTotal += stores[z].cookiesPerHour[i];
+for (var z = 0; z < Store.allStores.length; z++) {
+    hourTotal += Store.allStores[z].cookiesPerHour[i];
 }
+// console.log(hourTotal);
 var td = document.createElement('td');
 td.textContent = hourTotal;
+// console.log(td.textContent);
 tableFoot.appendChild(td);
 }
-//appending table footer to table
-position.appendChild(tableFoot);
+positionLoc.appendChild(tableFooter);
+}
 
-//creating table for employees
+
+makeTableFooter();
+// //appending table footer to table
+// tableFooter.appendChild(tableFoot);
+
+//creating second table for employees
 //creating table header
 var position = document.getElementById('employeeData');
 var tableHead = document.createElement('thead');
@@ -187,6 +207,7 @@ position.appendChild(tRow);
 }
 
 
+
 //go dark function
 //got help her from couple different websites
 //https://davidwalsh.name/css-variables-javascript
@@ -210,7 +231,6 @@ if (whatColor === '#544bff') {
         var wall = document.getElementById('wallpaper');
 wall.style.visibility = 'hidden';
     } else {
-        
         document.documentElement.style
         .setProperty('--first-color', '#544bff');
         document.documentElement.style
@@ -255,6 +275,10 @@ function newStoreAdd(event) {
   newStore.render();
   console.log(newStore);
   console.log(Store.allStores);
+  var tfooty = document.getElementById('tfooty');
+  tfooty.parentNode.removeChild(tfooty);
+  
+  makeTableFooter();
 }
 
 //event listener for newStoreADD
