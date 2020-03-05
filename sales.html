@@ -7,14 +7,18 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Anton|Caveat|Pacifico|Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all-pages.css">
+    <link rel="stylesheet" href="css/sales-styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Caveat|Pacifico|Source+Sans+Pro&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
     <header>
-        <h1>PattyCake's Salmon Cookies</h1>
         <img src="images/salmoncookie.png" alt="salmon backed into a cookie" width="100">
+        <h1 id="pageTitle">PattyCake's Salmon Cookies</h1>
+        <p>Open <br> 6am - 8pm <br> Everyday!</p>
     </header>
     <main>
         <nav>
@@ -23,21 +27,23 @@
                 <li><a href="about.html">About us</a></li>
                 <li><a href="locations.html">Locations</a></li>
                 <li><a href="Recipies.html">Recipies</a></li>
+                <li><button onclick="goDark()">Dark/Light</button></li>
             </ul>
         </nav>
-        <h2>Sales Data</h2>
-        <table>
-            <caption>Sale of Cookies</caption>
-            <tbody id="salesData">
-            </tbody>
-        </table>
-        <br><br>
-        <table>
-            <caption>Cookie Tosser needed per hour</caption>
-            <tbody id="employeeData">
-            </tbody>
-        </table>
-
+        <div id="companyInfo">
+            <h2>Sales Data</h2>
+            <table>
+                <caption>Sale of Cookies</caption>
+                <tbody id="salesData">
+                </tbody>
+            </table>
+            <br><br>
+            <table>
+                <caption>Cookie Tosser needed per hour</caption>
+                <tbody id="employeeData">
+                </tbody>
+            </table>
+        </div>
     </main>
 
 
