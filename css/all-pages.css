@@ -28,6 +28,12 @@ header p {
     font-family: 'Source Sans Pro', sans-serif;
     background-color: var(--second-color);
 }
+header h3 {
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: var(--second-color);
+    border-top: 2px solid var(--fourth-color);
+}
 #pageTitle {
     display: inline-block;
     width: 500px;
@@ -96,4 +102,92 @@ header, #content, #locations {
 }
 button {
     background-color: var(--second-color);
+    color: var(--fourth-color);
+}
+
+/* styles for homepage  */
+div {
+    display: inline-block;
+    width: 70%;
+    margin-left: 60px;
+    margin-top: 50px;
+    text-align: center; 
+}
+div h2 {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 10px;
+}
+div p {
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+}
+section {
+    display: inline-block;
+    width: 300px;
+    background-color: cornflowerblue;
+    border-radius: 30px;
+    border: 3px solid var(--fourth-color);
+    margin-right: 0;
+}
+section li {
+    margin-bottom: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+figure {
+    width: 200px;
+    display: inline-block;
+    margin-left: 75px;
+}
+figure img {
+    width: 200px;
+    margin-left: 75px;
+}
+figcaption {
+    margin-left: 90px;
+}
+#wallpaper {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: 100px;
+}
+header, #content, #locations {
+    position: relative;
+    z-index: 2;
+}
+
+/* style for sales page */
+}
+#companyInfo {
+    display: inline-block;
+    margin-left: 30px;
+    width: 70%;
+}
+
+th, td {
+    border: 1px solid var(--fourth-color);
+    padding: 3px;
+    max-width: 50px;
+    min-width: 15px;
+  }
+  table {
+    display: inline-block;
+    text-align: center;
+    color: var(--fourth-color);
+    background-color: var(--second-color);
+  }
+  caption {
+      font-size: 20px;
+      font-weight: bold;
+      display: block;
+  }
+#salesData, #employeeData {
+    display: inline-block;
+    background-color: var(--second-color);
+    width: 70%;
 }
