@@ -21,8 +21,10 @@ function Store(location, min, max, avgCookies) {
     this.avgCookies = avgCookies;
     this.cookiesPerHour = this.setCookiesSold();
     this.TotalSold = this.setTotal();
+    Store.allStores.push(this);
 }
 
+Store.allStores = [];
 // Prototypes and functions.
 
 //protoypes for cookies sold
@@ -65,11 +67,11 @@ var storeFive = new Store('Lima', 2, 16, 4.6 );
 // console.log(storeOne.TotalSold);
 // cookieSoldArray();
 // totalCookieSold();
-console.log(storeOne);
-console.log(storeTwo);
-console.log(storeThree);
-console.log(storeFour);
-console.log(storeFive);
+// console.log(storeOne);
+// console.log(storeTwo);
+// console.log(storeThree);
+// console.log(storeFour);
+// console.log(storeFive);
 
 
 //creating table
@@ -114,9 +116,13 @@ position.appendChild(tableRow);
 }
 
 var stores = [storeOne, storeTwo, storeThree, storeFour, storeFive];
-for (var z = 0; z < stores.length; z++) {
-    stores[z].render();
+
+function makeTable() {
+for (var z = 0; z < Store.allStores.length; z++) {
+    Store.allStores[z].render();
 }
+}
+makeTable();
 
 //creating table footer
 var tableFoot = document.createElement('tr');
@@ -217,3 +223,40 @@ wall.style.visibility = 'hidden';
 wall.style.visibility = 'visible';
     }   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//function for adding new stores
+function newStoreAdd(event) {
+    event.preventDefault();
+    console.log(Store.allStores);
+
+  var locationInput = document.getElementById('location');
+  var locationValue = locationInput.value;
+  var minInput = document.getElementById('minCustomers');
+  var minValue = minInput.value;
+  var maxInput = document.getElementById('maxCustomers');
+  var maxValue = maxInput.value;
+  var avgInput = document.getElementById('avgSold');
+  var avgValue = avgInput.value;
+
+  var newStore = new Store(locationValue, minValue, maxValue, avgValue);
+  newStore.setCookiesSold();
+  newStore.setTotal();
+  newStore.render();
+  console.log(newStore);
+  console.log(Store.allStores);
+}
+
+//event listener for newStoreADD
+var newStoreData = document.getElementById('newStore');
+newStoreData.addEventListener('submit', newStoreAdd); 

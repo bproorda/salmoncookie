@@ -191,3 +191,9 @@ th, td {
     background-color: var(--second-color);
     width: 70%;
 }
+
+/* form */
+form {
+    display: inline-block;
+    width: 500px;
+}
