@@ -182,7 +182,38 @@ position.appendChild(tRow);
 
 
 //go dark function
+//got help her from couple different websites
+//https://davidwalsh.name/css-variables-javascript
+//https://developer.mozilla.org/en-US/docs/Web/CSS/--*
 function goDark() {
-    var body = document.getElementsByClassName('body');
-    body.setAttribute
+var whatColor = getComputedStyle(document.documentElement)
+    .getPropertyValue('--first-color');
+    console.log(whatColor);
+
+if (whatColor === '#544bff') {
+        document.documentElement.style
+        .setProperty('--fourth-color', 'white');
+        document.documentElement.style
+        .setProperty('--first-color', 'black');
+        document.documentElement.style
+        .setProperty('--second-color', '#03122b');
+        document.documentElement.style
+        .setProperty('--third-color', '#0a2411');
+        document.documentElement.style
+        .setProperty('--fourth-color', 'white');
+        var wall = document.getElementById('wallpaper');
+wall.style.visibility = 'hidden';
+    } else {
+        
+        document.documentElement.style
+        .setProperty('--first-color', '#544bff');
+        document.documentElement.style
+        .setProperty('--second-color', '#ff4bf6');
+        document.documentElement.style
+        .setProperty('--third-color', '#ffab4b');
+        document.documentElement.style
+        .setProperty('--fourth-color', 'black');
+        var wall = document.getElementById('wallpaper');
+wall.style.visibility = 'visible';
+    }   
 }
