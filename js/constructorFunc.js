@@ -21,8 +21,10 @@ function Store(location, min, max, avgCookies) {
     this.avgCookies = avgCookies;
     this.cookiesPerHour = this.setCookiesSold();
     this.TotalSold = this.setTotal();
+    Store.allStores.push(this);
 }
 
+Store.allStores = [];
 // Prototypes and functions.
 
 //protoypes for cookies sold
@@ -65,17 +67,19 @@ var storeFive = new Store('Lima', 2, 16, 4.6 );
 // console.log(storeOne.TotalSold);
 // cookieSoldArray();
 // totalCookieSold();
-console.log(storeOne);
-console.log(storeTwo);
-console.log(storeThree);
-console.log(storeFour);
-console.log(storeFive);
+// console.log(storeOne);
+// console.log(storeTwo);
+// console.log(storeThree);
+// console.log(storeFour);
+// console.log(storeFive);
 
 
 //creating table
 //creating table header
+
 var position = document.getElementById('salesData');
 var tableHead = document.createElement('thead');
+
 
 //creating blank first th
 var firstTh = document.createElement('th');
@@ -94,10 +98,14 @@ position.appendChild(tableHead);
 
 //Rendering Function to create table rows
 Store.prototype.render = function() {
+    var position = document.getElementById('salesData');
+var tableHead = document.createElement('thead');
 
 //creating tableRow
 var tableRow = document.createElement('tr');
-
+tableRow.setAttribute('id', this.location);
+tableRow.getAttribute('id');
+console.log(tableRow.getAttribute('id'));
 //adding location
 var locTD = document.createElement('td');
 locTD.textContent = this.location;
@@ -109,39 +117,58 @@ for (var k = 0; k < this.cookiesPerHour.length; k++){
     td.textContent = this.cookiesPerHour[k];
     tableRow.appendChild(td);
 }
+
 position.appendChild(tableRow);
 
 }
 
 var stores = [storeOne, storeTwo, storeThree, storeFour, storeFive];
-for (var z = 0; z < stores.length; z++) {
-    stores[z].render();
+
+function makeTable() {
+for (var z = 0; z < Store.allStores.length; z++) {
+    Store.allStores[z].render();
+    console.log(Store.allStores[z]);
 }
+}
+makeTable();
 
-//creating table footer
+var tableFooter;
+function makeTableFooter() {
+var positionLoc = document.getElementById('salesData');
+tableFooter = document.createElement('tfoot');
+tableFooter.setAttribute('id', 'tfooty');
+// console.log('this is running');
+
+//creating footer row
 var tableFoot = document.createElement('tr');
-
+tableFooter.appendChild(tableFoot);
 //adding first item
 var totalFoot = document.createElement('td');
 totalFoot.textContent = 'Total'
 tableFoot.appendChild(totalFoot);
 
-
 //adding hourly totals
 var hourTotal = 0;
 for (var i = 0; i < hoursOpen.length; i++) {
     hourTotal = 0;
-for (var z = 0; z < stores.length; z++) {
-    hourTotal += stores[z].cookiesPerHour[i];
+for (var z = 0; z < Store.allStores.length; z++) {
+    hourTotal += Store.allStores[z].cookiesPerHour[i];
 }
+// console.log(hourTotal);
 var td = document.createElement('td');
 td.textContent = hourTotal;
+// console.log(td.textContent);
 tableFoot.appendChild(td);
 }
-//appending table footer to table
-position.appendChild(tableFoot);
+positionLoc.appendChild(tableFooter);
+}
 
-//creating table for employees
+
+makeTableFooter();
+// //appending table footer to table
+// tableFooter.appendChild(tableFoot);
+
+//creating second table for employees
 //creating table header
 var position = document.getElementById('employeeData');
 var tableHead = document.createElement('thead');
@@ -161,7 +188,7 @@ for (var j = 0; j < hoursOpen.length; j++) {
 position.appendChild(tableHead);
 
 //trying to create second table
-
+function employees() {
 for (var count = 0; count < stores.length; count ++) {
 var tRow = document.createElement('tr');
 var tRowFirst = document.createElement('td');
@@ -179,6 +206,8 @@ for (var w = 0; w < hoursOpen.length; w++) {
 }
 position.appendChild(tRow);
 }
+}
+employees();
 
 
 //go dark function
@@ -204,7 +233,6 @@ if (whatColor === '#544bff') {
         var wall = document.getElementById('wallpaper');
 wall.style.visibility = 'hidden';
     } else {
-        
         document.documentElement.style
         .setProperty('--first-color', '#544bff');
         document.documentElement.style
@@ -217,3 +245,62 @@ wall.style.visibility = 'hidden';
 wall.style.visibility = 'visible';
     }   
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//function for adding new stores
+function newStoreAdd(event) {
+    event.preventDefault();
+    console.log('new store ran!');
+
+  var locationInput = document.getElementById('location');
+  var locationValue = locationInput.value;
+  var minInput = document.getElementById('minCustomers');
+  var minValue = minInput.value;
+  var maxInput = document.getElementById('maxCustomers');
+  var maxValue = maxInput.value;
+  var avgInput = document.getElementById('avgSold');
+  var avgValue = avgInput.value;
+
+  var newStore = new Store(locationValue, minValue, maxValue, avgValue);
+
+ //Checking if new location matches old one, and if so replaces it. 
+ var d = 0;
+ while (d < (Store.allStores.length - 1)) {
+        if (newStore.location === Store.allStores[d].location) {
+            // console.log(true);
+            // console.log(Store.allStores);
+                var oldEl = document.getElementById(Store.allStores[d].location);
+                oldEl.parentNode.removeChild(oldEl);
+            break;
+        } else {
+            // console.log(false);
+            d++;
+        }
+ }
+   
+
+  newStore.setCookiesSold();
+  newStore.setTotal();
+  newStore.render();
+//   console.log(newStore);
+//   console.log(Store.allStores);
+  var tfooty = document.getElementById('tfooty');
+  tfooty.parentNode.removeChild(tfooty);
+//   employees();
+  
+  makeTableFooter();
+}
+
+//event listener for newStoreADD
+var newStoreData = document.getElementById('newStore');
+newStoreData.addEventListener('submit', newStoreAdd); 
