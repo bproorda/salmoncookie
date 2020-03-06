@@ -103,7 +103,9 @@ var tableHead = document.createElement('thead');
 
 //creating tableRow
 var tableRow = document.createElement('tr');
-
+tableRow.setAttribute('id', this.location);
+tableRow.getAttribute('id');
+console.log(tableRow.getAttribute('id'));
 //adding location
 var locTD = document.createElement('td');
 locTD.textContent = this.location;
@@ -115,10 +117,8 @@ for (var k = 0; k < this.cookiesPerHour.length; k++){
     td.textContent = this.cookiesPerHour[k];
     tableRow.appendChild(td);
 }
+
 position.appendChild(tableRow);
-
-
-
 
 }
 
@@ -127,6 +127,7 @@ var stores = [storeOne, storeTwo, storeThree, storeFour, storeFive];
 function makeTable() {
 for (var z = 0; z < Store.allStores.length; z++) {
     Store.allStores[z].render();
+    console.log(Store.allStores[z]);
 }
 }
 makeTable();
@@ -136,7 +137,7 @@ function makeTableFooter() {
 var positionLoc = document.getElementById('salesData');
 tableFooter = document.createElement('tfoot');
 tableFooter.setAttribute('id', 'tfooty');
-console.log('this is running');
+// console.log('this is running');
 
 //creating footer row
 var tableFoot = document.createElement('tr');
@@ -258,7 +259,7 @@ wall.style.visibility = 'visible';
 //function for adding new stores
 function newStoreAdd(event) {
     event.preventDefault();
-    console.log(Store.allStores);
+    console.log('new store ran!');
 
   var locationInput = document.getElementById('location');
   var locationValue = locationInput.value;
@@ -270,11 +271,28 @@ function newStoreAdd(event) {
   var avgValue = avgInput.value;
 
   var newStore = new Store(locationValue, minValue, maxValue, avgValue);
+
+ //Checking if new location matches old one, and if so replaces it. 
+ var d = 0;
+ while (d < (Store.allStores.length - 1)) {
+        if (newStore.location === Store.allStores[d].location) {
+            // console.log(true);
+            // console.log(Store.allStores);
+                var oldEl = document.getElementById(Store.allStores[d].location);
+                oldEl.parentNode.removeChild(oldEl);
+            break;
+        } else {
+            // console.log(false);
+            d++;
+        }
+ }
+   
+
   newStore.setCookiesSold();
   newStore.setTotal();
   newStore.render();
-  console.log(newStore);
-  console.log(Store.allStores);
+//   console.log(newStore);
+//   console.log(Store.allStores);
   var tfooty = document.getElementById('tfooty');
   tfooty.parentNode.removeChild(tfooty);
   

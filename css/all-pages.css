@@ -68,6 +68,10 @@ main {
     min-height: 1000px;
     background-image: radial-gradient(var(--first-color), var(--second-color), var(--first-color));
     color: var(--fourth-color);
+    height: 100%;
+}
+body {
+    background-color: var(--first-color);
 }
 #pageTitle {
    
@@ -93,7 +97,6 @@ h1 {
     z-index: 1;
     position: fixed;
     top: 0;
-   
     left: 0;
     right: 0;
 }
@@ -179,7 +182,9 @@ th, td {
     display: inline-block;
     text-align: center;
     color: var(--fourth-color);
-    background-color: var(--second-color);
+    /* background-color: var(--second-color); */
+    position: relative;
+    z-index: 2;
   }
   caption {
       font-size: 20px;
@@ -188,12 +193,15 @@ th, td {
   }
 #salesData, #employeeData {
     display: inline-block;
-    background-color: var(--second-color);
+    /* background-color: var(--second-color); */
     width: 70%;
 }
 
 /* form */
 form {
-    display: inline-block;
-    width: 500px;
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+    z-index: 2;
+    background-color: var(--first-color);
 }
