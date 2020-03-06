@@ -188,7 +188,7 @@ for (var j = 0; j < hoursOpen.length; j++) {
 position.appendChild(tableHead);
 
 //trying to create second table
-
+function employees() {
 for (var count = 0; count < stores.length; count ++) {
 var tRow = document.createElement('tr');
 var tRowFirst = document.createElement('td');
@@ -206,7 +206,8 @@ for (var w = 0; w < hoursOpen.length; w++) {
 }
 position.appendChild(tRow);
 }
-
+}
+employees();
 
 
 //go dark function
@@ -295,6 +296,7 @@ function newStoreAdd(event) {
 //   console.log(Store.allStores);
   var tfooty = document.getElementById('tfooty');
   tfooty.parentNode.removeChild(tfooty);
+//   employees();
   
   makeTableFooter();
 }

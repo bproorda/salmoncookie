@@ -168,7 +168,7 @@ header, #content, #locations {
 }
 #companyInfo {
     display: inline-block;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     width: 70%;
 }
 
@@ -178,12 +178,13 @@ th, td {
     max-width: 50px;
     min-width: 15px;
   }
-  table {
-    display: inline-block;
+  table, tbody {
+    /* display: inline-block; */
     text-align: center;
     color: var(--fourth-color);
-    /* background-color: var(--second-color); */
+    background-color: var(--second-color);
     position: relative;
+    left: 50px;
     z-index: 2;
   }
   caption {
@@ -193,7 +194,7 @@ th, td {
   }
 #salesData, #employeeData {
     display: inline-block;
-    /* background-color: var(--second-color); */
+    background-color: var(--second-color);
     width: 70%;
 }
 
