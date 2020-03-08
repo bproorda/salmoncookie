@@ -65,16 +65,6 @@ var storeThree = new Store('Dubai', 1, 38, 3.7 );
 var storeFour = new Store('Paris', 30, 38, 2.3 );
 var storeFive = new Store('Lima', 2, 16, 4.6 );
 
-// console.log(storeOne.cookiesPerHour);
-// console.log(storeOne.TotalSold);
-// cookieSoldArray();
-// totalCookieSold();
-// console.log(storeOne);
-// console.log(storeTwo);
-// console.log(storeThree);
-// console.log(storeFour);
-// console.log(storeFive);
-
 
 //creating table
 //creating table header
@@ -109,7 +99,7 @@ tableRow.setAttribute('id', this.location);
 tableRow.getAttribute('id');
 // console.log(tableRow.getAttribute('id'));
 //adding location
-var locTD = document.createElement('td');
+var locTD = document.createElement('th');
 locTD.textContent = this.location;
 tableRow.appendChild(locTD);
 
@@ -145,7 +135,7 @@ tableFooter.setAttribute('id', 'tfooty');
 var tableFoot = document.createElement('tr');
 tableFooter.appendChild(tableFoot);
 //adding first item
-var totalFoot = document.createElement('td');
+var totalFoot = document.createElement('th');
 totalFoot.textContent = 'Total'
 tableFoot.appendChild(totalFoot);
 
@@ -193,7 +183,7 @@ position.appendChild(tableHead);
 function employees() {
 for (var count = 0; count < stores.length; count ++) {
 var tRow = document.createElement('tr');
-var tRowFirst = document.createElement('td');
+var tRowFirst = document.createElement('th');
 tRowFirst.textContent = stores[count].location;
 tRow.appendChild(tRowFirst);
 
@@ -232,6 +222,14 @@ if (whatColor === '#544bff') {
         .setProperty('--third-color', '#0a2411');
         document.documentElement.style
         .setProperty('--fourth-color', 'white');
+        document.documentElement.style
+        .setProperty('--fifth-color', 'white');
+        document.documentElement.style
+        .setProperty('--sixth-color', 'white');
+        document.documentElement.style
+        .setProperty('--seventh-color', 'white');
+        document.documentElement.style
+        .setProperty('--eighth-color', 'black');
         var wall = document.getElementById('wallpaper');
 wall.style.visibility = 'hidden';
     } else {
@@ -243,21 +241,19 @@ wall.style.visibility = 'hidden';
         .setProperty('--third-color', '#ffab4b');
         document.documentElement.style
         .setProperty('--fourth-color', 'black');
+        document.documentElement.style
+        .setProperty('--fifth-color', '#f6ff4b');
+        document.documentElement.style
+        .setProperty('--sixth-color', '#574bff');
+        document.documentElement.style
+        .setProperty('--seventh-color', '#ff261e');
+        document.documentElement.style
+        .setProperty('--eighth-color', 'cornflowerblue');
         var wall = document.getElementById('wallpaper');
 wall.style.visibility = 'visible';
     }   
 }
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 //function for adding new stores
 function newStoreAdd(event) {

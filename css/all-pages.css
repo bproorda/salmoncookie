@@ -7,6 +7,10 @@
     --second-color: #ff4bf6;
     --third-color: #ffab4b;
     --fourth-color: black;
+    --fifth-color: #f6ff4b;
+    --sixth-color: #574bff;
+    --seventh-color: #ff261e;
+    --eighth-color: cornflowerblue;
 }
 img {
     width: 150px;
@@ -16,7 +20,7 @@ header {
     background-color: var(--third-color);
     display: inline-block;
     width: 100%;
-    color: var(--fourth-color);
+    color: var(--sixth-color);
     border-bottom:2px solid var(--fourth-color);
 }
 header p {
@@ -25,6 +29,7 @@ header p {
     border-radius: 50%;
     margin-bottom: 20px;
     padding: 15px;
+    color: var(--fourth-color);
     font-family: 'Source Sans Pro', sans-serif;
     background-color: var(--second-color);
 }
@@ -52,14 +57,15 @@ ul {
 }
 nav li {
     margin-bottom: 40px;
-    background-color: var(--second-color);
+    background-color: var(--third-color);
     border: 2px solid var(--fourth-color);
     border-left: 0;
     border-radius: 0 10px 10px 0;
     text-align: center;
-    font-family: 'Anton', sans-serif;
+    font-family: 'Pacifico', cursive;
     box-shadow: 10px 10px 10px;
     padding: 5px;
+    
 }
 li:last-child {
     margin-bottom: 0;
@@ -79,7 +85,7 @@ body {
 }
 a {
     padding: 5px;
-    color: var(--fourth-color);
+    color: var(--sixth-color);
     text-decoration: none;
 }
 nav li:hover, a:hover, button:hover {
@@ -104,8 +110,9 @@ header, #content, #locations {
     z-index: 2;
 }
 button {
-    background-color: var(--second-color);
-    color: var(--fourth-color);
+    background-color: var(--third-color);
+    color: var(--sixth-color);
+    font-family: 'Pacifico', cursive;
 }
 
 /* styles for homepage  */
@@ -117,20 +124,25 @@ div {
     text-align: center; 
 }
 div h2 {
-    font-family: 'Caveat', cursive;
+    font-family: 'Pacifico', cursive;
+    background-color: var(--third-color);
+    color: var(--sixth-color);
+    border-radius: 20px;
     font-size: 20px;
     font-weight: bolder;
     padding: 10px;
 }
 div p {
     font-size: 15px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
+    color: var(--seventh-color);
+    /* text-shadow: 2px 2px black; */
 }
 section {
     display: inline-block;
     width: 300px;
-    background-color: cornflowerblue;
+    background-color: var(--eighth-color);
     border-radius: 30px;
     border: 3px solid var(--fourth-color);
     margin-right: 0;
@@ -168,24 +180,28 @@ header, #content, #locations {
 }
 #companyInfo {
     display: inline-block;
-    /* margin-left: 30px; */
     width: 70%;
+}
+th {
+    padding: 10px;
+    font-weight: bolder;
 }
 
 th, td {
     border: 1px solid var(--fourth-color);
-    padding: 3px;
-    max-width: 50px;
-    min-width: 15px;
+
   }
   table, tbody {
-    /* display: inline-block; */
     text-align: center;
-    color: var(--fourth-color);
     background-color: var(--second-color);
-    position: relative;
-    left: 50px;
+    display: table;
+    margin: 0 auto;
+    width: 1050px;
     z-index: 2;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--fifth-color);
+    table-layout: fixed;
+    clear: both;
   }
   caption {
       font-size: 20px;
@@ -194,7 +210,7 @@ th, td {
   }
 #salesData, #employeeData {
     display: inline-block;
-    background-color: var(--second-color);
+    
     width: 70%;
 }
 
@@ -205,4 +221,6 @@ form {
     margin: 0 auto;
     z-index: 2;
     background-color: var(--first-color);
+    color: var(--fifth-color);
+    font-family: Arial, Helvetica, sans-serif;
 }
