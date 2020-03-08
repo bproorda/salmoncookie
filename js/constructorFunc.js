@@ -39,7 +39,9 @@ function cookieSoldArray(min, max, averageCookies) {
     for (var i = 0; i < hoursOpen.length; i++) {
         cookies[i] = Math.ceil(Math.floor(Math.random()*(max-min+1) + min) * averageCookies);
         totalStore += cookies[i];
+        // console.log(cookies);
     }
+    console.log(cookies);
     return cookies;
 } 
 
@@ -105,7 +107,7 @@ var tableHead = document.createElement('thead');
 var tableRow = document.createElement('tr');
 tableRow.setAttribute('id', this.location);
 tableRow.getAttribute('id');
-console.log(tableRow.getAttribute('id'));
+// console.log(tableRow.getAttribute('id'));
 //adding location
 var locTD = document.createElement('td');
 locTD.textContent = this.location;
@@ -127,7 +129,7 @@ var stores = [storeOne, storeTwo, storeThree, storeFour, storeFive];
 function makeTable() {
 for (var z = 0; z < Store.allStores.length; z++) {
     Store.allStores[z].render();
-    console.log(Store.allStores[z]);
+    // console.log(Store.allStores[z]);
 }
 }
 makeTable();
@@ -265,11 +267,13 @@ function newStoreAdd(event) {
   var locationInput = document.getElementById('location');
   var locationValue = locationInput.value;
   var minInput = document.getElementById('minCustomers');
-  var minValue = minInput.value;
+  var minValue = parseInt(minInput.value);
+//   console.log(minValue);
   var maxInput = document.getElementById('maxCustomers');
-  var maxValue = maxInput.value;
+  var maxValue = parseInt(maxInput.value);
+//   console.log(maxValue);
   var avgInput = document.getElementById('avgSold');
-  var avgValue = avgInput.value;
+  var avgValue = parseInt(avgInput.value);
 
   var newStore = new Store(locationValue, minValue, maxValue, avgValue);
 
@@ -289,10 +293,10 @@ function newStoreAdd(event) {
  }
    
 
-  newStore.setCookiesSold();
+//   newStore.setCookiesSold();
   newStore.setTotal();
   newStore.render();
-//   console.log(newStore);
+  console.log(newStore);
 //   console.log(Store.allStores);
   var tfooty = document.getElementById('tfooty');
   tfooty.parentNode.removeChild(tfooty);
